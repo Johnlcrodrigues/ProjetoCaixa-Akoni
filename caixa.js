@@ -5,7 +5,15 @@ function efetuar() {
    
    
    
-     let resto = elementoEfetuar.value % 5;
+     let saldo = elementoEfetuar.value % 5;
+
+     const jsonSaque = {
+        saque: elementoEfetuar.value,
+        
+      };
+    
+      arrayCedula.push(jsonSaque);
+      console.log(arrayCedula);
     /*
     console.log(resto);
     if (resto == 0 ){
@@ -15,6 +23,7 @@ function efetuar() {
 
         window.alert('Só são possiveis saques  de valores multiplos de 5 reais');
 */
+
 
 while (saldo > 0) {
 
@@ -49,7 +58,7 @@ switch (saldo) {
 
 
 
-
+}
 
 }
 
