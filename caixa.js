@@ -1,12 +1,14 @@
 const arrayCedula = []
 let exibir = "Saques:" ;
-
+// Função para efetuar o saque
 function efetuar() {
     let elementoEfetuar = document.getElementById("saqueValor");
         let saldo = elementoEfetuar.value;
 
+//if de verificação se o valor sacado é divisivel por 5
     if (saldo %5 == 0 ){
-                
+
+//if de verificação de quantidade notas         
         if (saldo >= 100 ){               
             qtdeCedulas = Math.floor(saldo/100);
             saldo = saldo % 100;
@@ -37,13 +39,14 @@ function efetuar() {
             arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 5});
         } 
         
-       
+//for para passar o valor do array a variavel       
         for (let i=0;i<arrayCedula.length;i++) {
     
             exibir = exibir + `\n Número de notas: ${arrayCedula[i].qtdeCedulas} de: ${arrayCedula[i].valorNota} Reais`;
         }
         window.alert(exibir);   
-   
+
+//else caso não seja divisivel por 5 - tratamento dado para numeros não divisiveis   
     }else{
         window.alert('Só são possiveis saques de valores multiplos de 5 reais');
     }
