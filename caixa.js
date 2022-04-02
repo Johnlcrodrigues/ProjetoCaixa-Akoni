@@ -1,4 +1,5 @@
 const arrayCedula = []
+let exibir = "Saques:" ;
 
 function efetuar() {
     let elementoEfetuar = document.getElementById("saqueValor");
@@ -36,11 +37,14 @@ function efetuar() {
             arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 5});
         } 
         
-        for (let i = 0; i < arrayCedula.length; i++) {
-            window.alert(`Número de notas: ${arrayCedula[i].qtdeCedulas} e valor da nota: ${arrayCedula[i].valorNota}`);
+       
+        for (let i=0;i<arrayCedula.length;i++) {
+    
+            exibir = exibir + `\n Número de notas: ${arrayCedula[i].qtdeCedulas} de: ${arrayCedula[i].valorNota} Reais`;
         }
-                    
-    } else{
+        window.alert(exibir);   
+   
+    }else{
         window.alert('Só são possiveis saques de valores multiplos de 5 reais');
     }
 };
