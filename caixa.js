@@ -2,67 +2,46 @@ const arrayCedula = []
 
 function efetuar() {
     let elementoEfetuar = document.getElementById("saqueValor");
-   
-   
-   
-     let saldo = elementoEfetuar.value % 5;
+        let saldo = elementoEfetuar.value;
 
-     const jsonSaque = {
-        saque: elementoEfetuar.value,
-        
-      };
-    
-      arrayCedula.push(jsonSaque);
-      console.log(arrayCedula);
-    /*
-    console.log(resto);
-    if (resto == 0 ){
-        console.log("teste passed")
-        
-    } else{
-
-        window.alert('Só são possiveis saques  de valores multiplos de 5 reais');
-*/
-
-
-while (saldo > 0) {
-
-switch (saldo) {
-    case (saldo >100):
-        qtdeCedulas = int(saldo/100);
-        saldo = saldo % 100
-        arrayCedula.push[qtdeCedulas,100]
-        
-    case (saldo >50):
-        qtdeCedulas = int(saldo/50);
-        saldo = saldo % 50;
-        arrayCedula.push[qtdeCedulas,50];
-            
-    case (saldo >20):
-        qtdeCedulas = int(saldo/20);
-        saldo = saldo % 20;
-        arrayCedula.push[qtdeCedulas,20];
-            
-    case (saldo >10):
-        qtdeCedulas = int(saldo/10);
-        saldo = saldo % 10
-        arrayCedula.push[qtdeCedulas,10]
-
-    case (saldo >5):
-        qtdeCedulas = int(saldo/5);
-        saldo = saldo % 5;
-        arrayCedula.push[qtdeCedulas,5];
+    if (saldo %5 == 0 ){
                 
-            
-    default:
+        if (saldo >= 100 ){               
+            qtdeCedulas = Math.floor(saldo/100);
+            saldo = saldo % 100;
+            arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 100});
+        }
 
+        if (saldo >= 50 ){               
+            qtdeCedulas = Math.floor(saldo/50);
+            saldo = saldo % 50;
+            arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 50});
+        }       
+        
+        if (saldo >= 20 ){               
+            qtdeCedulas = Math.floor(saldo/20);
+            saldo = saldo % 20;
+            arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 20});
+        }       
 
+        if (saldo >= 10 ){               
+            qtdeCedulas = Math.floor(saldo/10);
+            saldo = saldo % 10;
+            arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 10});
+        }     
 
-}
-
-}
-
-console.log(arrayCedula[1.1]);
-   
+        if (saldo >= 5 ){               
+            qtdeCedulas = Math.floor(saldo/5);
+            saldo = saldo % 5;
+            arrayCedula.push({qtdeCedulas: qtdeCedulas, valorNota: 5});
+        } 
+        
+        for (let i = 0; i < arrayCedula.length; i++) {
+            window.alert(`Número de notas: ${arrayCedula[i].qtdeCedulas} e valor da nota: ${arrayCedula[i].valorNota}`);
+        }
+                    
+    } else{
+        window.alert('Só são possiveis saques de valores multiplos de 5 reais');
+    }
 };
 
